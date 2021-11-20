@@ -30,11 +30,11 @@ async function signIn(req, res) {
     }
     const token = uuid();
     await connection.query('INSERT INTO sessions (user_id,token) VALUES ($1,$2)', [user.rows[0].id, token]);
-    const { name, user_id } = user.rows[0];
+    const { name, id } = user.rows[0];
     res.send({
+      id,
       name,
       token,
-      user_id,
     });
   } catch (error) {
     res.sendStatus(500);
