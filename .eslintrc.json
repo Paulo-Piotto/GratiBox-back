@@ -17,6 +17,7 @@
                 "js": "ignorePackages"
             }
            ],
-           "consistent-return": "off"
+           "consistent-return": "off",
+           "camelcase": "off"
     }
 }

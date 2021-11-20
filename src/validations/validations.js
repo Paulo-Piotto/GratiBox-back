@@ -12,15 +12,25 @@ const registerValidation = joi.object({
 });
 
 const planValidation = joi.object({
-  user_id: joi.string().min(3).max(30).required(),
+  userId: joi.number().required(),
   type: joi.string().min(6).required(),
-  deleivery_date: joi.date().required(),
+  deliveryDate: joi.string().min(2).required(),
   products: joi.string().min(4).required(),
-  sign_date: joi.date().required(),
+  signDate: joi.date().required(),
+});
+
+const deliveryValidation = joi.object({
+  userId: joi.number().required(),
+  fullName: joi.string().min(3).required(),
+  adress: joi.string().min(3).required(),
+  cep: joi.string().min(8).required(),
+  city: joi.string().min(3).required(),
+  state: joi.string().min(2).required(),
 });
 
 export {
   loginValidation,
   registerValidation,
   planValidation,
+  deliveryValidation,
 };
