@@ -37,7 +37,7 @@ async function getPlan(req, res) {
   try {
     const session = (await connection.query('SELECT * FROM sessions WHERE token = $1', [sessionToken])).rows[0];
     const planData = await connection.query('SELECT * FROM plans WHERE "user_id" = $1', [session.user_id]);
-    res.send(planData.rows[0]);
+    res.send(planData.rows);
   } catch (error) {
     res.sendStatus(500);
   }
