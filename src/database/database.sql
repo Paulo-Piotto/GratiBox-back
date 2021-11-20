@@ -25,7 +25,7 @@ CREATE TABLE "plans" (
 	"id" serial NOT NULL,
 	"user_id" integer NOT NULL UNIQUE,
 	"type" varchar(255) NOT NULL,
-	"delivery_date" DATE NOT NULL,
+	"delivery_date" varchar(255) NOT NULL,
 	"products" varchar(255) NOT NULL,
 	"sign_date" DATE NOT NULL,
 	CONSTRAINT "plans_pk" PRIMARY KEY ("id")
